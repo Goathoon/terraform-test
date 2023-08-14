@@ -56,10 +56,10 @@ resource "aws_ecs_capacity_provider" "ecs_capacity_provider" {
 
 
     managed_scaling {
-      maximum_scaling_step_size = 1000
+      maximum_scaling_step_size = 10
       minimum_scaling_step_size = 1
       status                    = "ENABLED"
-      target_capacity           = 10
+      target_capacity           = 1
 
     }
   }
@@ -75,7 +75,7 @@ resource "aws_ecs_cluster_capacity_providers" "ecs" {
 #   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 # }
 
-# resource "aws_iam_role_policy_attachment" "ecs_ses" {x
+# resource "aws_iam_role_policy_attachment" "ecs_ses" {
 #   role       = aws_iam_role.ecs_task_execution_role.name
 #   policy_arn = aws_iam_policy.ses_send_email.arn
 # }
